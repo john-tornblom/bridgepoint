@@ -20,6 +20,7 @@ The BridgePoint toolchain currently rely on a windows-only interpreter called ge
 [5] [GPL v3](http://www.gnu.org/licenses/gpl-3.0.en.html)   
 [6] [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)   
 [7] [GPS Watch diff](http://pastebin.com/Mx4JkdD2)   
+[8] [self contained win32 version of pyrsl](https://ci.appveyor.com/project/john-tornblom/pyrsl/build/artifacts)   
 
 3. Background
 -------------
@@ -58,6 +59,7 @@ see [7] for a diff on the GPS watch project. Know difference include:
 * additional line breaks in some cases
 * some differences in the ordering of instances in a set
 
+Windows users generally don't have python installed. Consequently, a self-contained .exe of pyrsl is available at [8]. The exe require msvcr110.dll, i.e. Visual C++ Redistributable for Visual Studio 2012.
 6. Work Required
 ----------------
 Decide on which approach is most suitable:  
@@ -67,7 +69,7 @@ Decide on which approach is most suitable:
 * update perl scripts which invoke gen_erate.exe using wine to point at gen_erate instead.  
   
 6.2 Replace the perl-script with a python script
-* come up with a viable solution for windows users
+* come up with a viable solution for windows users.
 * come up with a good way for generating a makefile
 
 7. Acceptance Test
